@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/sneakers.css">
     <link rel="stylesheet" href="../css/enhanced-ui.css">
     <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="../css/safari-darkmode-fix.css">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -429,63 +430,120 @@
     <script src="../js/darkmode.js"></script>
     <script src="../js/cart.js"></script>
     <script>
-        // Add to cart event listeners
-        document.querySelectorAll('.add-to-cart').forEach(btn => {
-            btn.addEventListener('click', function() {
-                addToCart(this.dataset.name, this.dataset.price, this.dataset.image);
-            });
-        });
-        
-        // Cart toggle
-        document.getElementById('cart-logo').addEventListener('click', () => {
-            const cart = document.getElementById('cart');
-            cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
-        });
-        
-        // Heart icon toggle
-        document.querySelectorAll('.heart-icon').forEach(icon => {
-            icon.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const heart = this.querySelector('i');
-                heart.classList.toggle('bx-heart');
-                heart.classList.toggle('bxs-heart');
-            });
-        });
-        
-        // Scroll effects
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart display
+            if (typeof initCart === 'function') {
+                initCart();
+            }
             
-            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
-            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
-        });
-        
-        document.getElementById('backToTop').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        document.getElementById('menu-icon').addEventListener('click', () => {
-            document.getElementById('navmenu').classList.toggle('active');
-        });
-
-        // Brand filter logic
-        const brandFilter = document.getElementById('brand-filter');
-        if (brandFilter) {
-            brandFilter.addEventListener('change', () => {
-                const selected = brandFilter.value;
-                document.querySelectorAll('.content-right .product').forEach(card => {
-                    const brand = card.dataset.brand || '';
-                    if (selected === 'All Brands') {
-                        card.style.display = '';
+            // Add to cart event listeners
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            console.log('Found', addToCartButtons.length, 'add to cart buttons');
+            
+            addToCartButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const name = this.dataset.name;
+                    const price = this.dataset.price;
+                    const image = this.dataset.image;
+                    
+                    console.log('Add to cart clicked:', { name, price, image });
+                    
+                    if (typeof addToCart === 'function') {
+                        if (name && price && image) {
+                            addToCart(name, price, image);
+                        } else {
+                            console.error('Missing data attributes:', { name, price, image });
+                            alert('Error: Product information is missing. Please try again.');
+                        }
                     } else {
-                        card.style.display = (brand === selected) ? '' : 'none';
+                        console.error('addToCart function not found');
+                        alert('Cart functionality is not loaded. Please refresh the page.');
                     }
                 });
             });
-        }
+            
+            // Cart toggle
+            const cartLogo = document.getElementById('cart-logo');
+            if (cartLogo) {
+                cartLogo.addEventListener('click', () => {
+                    const cart = document.getElementById('cart');
+                    if (cart) {
+                        cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            }
+            
+            // Heart icon toggle
+            document.querySelectorAll('.heart-icon').forEach(icon => {
+                icon.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const heart = this.querySelector('i');
+                    if (heart) {
+                        heart.classList.toggle('bx-heart');
+                        heart.classList.toggle('bxs-heart');
+                    }
+                });
+            });
+            
+            // Menu icon toggle
+            const menuIcon = document.getElementById('menu-icon');
+            if (menuIcon) {
+                menuIcon.addEventListener('click', () => {
+                    const navmenu = document.getElementById('navmenu');
+                    if (navmenu) {
+                        navmenu.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Brand filter logic
+            const brandFilter = document.getElementById('brand-filter');
+            if (brandFilter) {
+                brandFilter.addEventListener('change', () => {
+                    const selected = brandFilter.value;
+                    document.querySelectorAll('.content-right .product').forEach(card => {
+                        const brand = card.dataset.brand || '';
+                        if (selected === 'All Brands') {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = (brand === selected) ? '' : 'none';
+                        }
+                    });
+                });
+            }
+        });
+        
+        // Scroll effects (can run immediately)
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            }
+            
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                backToTop.classList.toggle('visible', window.scrollY > 300);
+            }
+            
+            const header = document.querySelector('header');
+            if (header) {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            }
+        });
     </script>
 </body>
 </html>

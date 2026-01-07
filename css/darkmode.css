@@ -1,10 +1,12 @@
 /* ========================================
    DARK MODE - COMPLETE THEME
    Inverts all colors: white → black, black → white
+   Safari-compatible with -webkit- prefixes
    ======================================== */
 
-/* Dark Mode Variables */
-body.dark-mode {
+/* Dark Mode Variables - Safari Compatible */
+body.dark-mode,
+html.dark-mode body {
     --primary: #ff6b6b;
     --primary-dark: #e63946;
     --primary-light: #ff8a8a;
@@ -27,77 +29,113 @@ body.dark-mode {
     --shadow-xl: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-/* Body Background */
-body.dark-mode {
+/* Body Background - Safari Compatible */
+body.dark-mode,
+html.dark-mode body {
+    background-color: #0d0d0d !important;
+    background: #0d0d0d !important;
+    color: #e0e0e0 !important;
+    -webkit-text-fill-color: #e0e0e0;
+}
+
+/* Ensure html element also gets dark mode class for Safari */
+html.dark-mode {
     background-color: #0d0d0d;
-    color: #e0e0e0;
 }
 
-/* Header */
-body.dark-mode header {
+/* Header - Safari Compatible */
+body.dark-mode header,
+html.dark-mode header,
+html.dark-mode body header {
     background: rgba(18, 18, 18, 0.95) !important;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid #2d2d2d;
 }
 
-body.dark-mode header.sticky {
+body.dark-mode header.sticky,
+html.dark-mode header.sticky {
     background: rgba(18, 18, 18, 0.95) !important;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid #2d2d2d;
 }
 
-body.dark-mode header.sticky.scrolled {
+body.dark-mode header.sticky.scrolled,
+html.dark-mode header.sticky.scrolled {
     background: rgba(18, 18, 18, 0.98) !important;
 }
 
-body.dark-mode .Logo span {
+body.dark-mode .Logo span,
+html.dark-mode .Logo span {
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
 }
 
-body.dark-mode .navmenu li a {
-    color: #e0e0e0;
+body.dark-mode .navmenu li a,
+html.dark-mode .navmenu li a {
+    color: #e0e0e0 !important;
+    -webkit-text-fill-color: #e0e0e0;
 }
 
 body.dark-mode .navmenu li a:hover,
-body.dark-mode .navmenu li a.active {
-    color: #ff6b6b;
-}
-
-/* Mobile Menu */
-body.dark-mode .navmenu.active {
-    background: #1a1a1a;
-}
-
-body.dark-mode #menu-icon {
-    color: #ffffff !important;
-}
-
-/* Nav Icon Elements */
-body.dark-mode .nav-icon i {
-    color: #ffffff !important;
-}
-
-body.dark-mode .nav-icon i:hover {
+body.dark-mode .navmenu li a.active,
+html.dark-mode .navmenu li a:hover,
+html.dark-mode .navmenu li a.active {
     color: #ff6b6b !important;
+    -webkit-text-fill-color: #ff6b6b;
 }
 
-/* Buttons */
-body.dark-mode .dark-mode-btn {
-    color: #ffffff;
+/* Mobile Menu - Safari Compatible */
+body.dark-mode .navmenu.active,
+html.dark-mode .navmenu.active {
+    background: #1a1a1a !important;
 }
 
-body.dark-mode #signup-btn {
-    background: linear-gradient(135deg, #ff6b6b, #ff8a8a);
+body.dark-mode #menu-icon,
+html.dark-mode #menu-icon {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* Nav Icon Elements - Safari Compatible */
+body.dark-mode .nav-icon i,
+html.dark-mode .nav-icon i {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+body.dark-mode .nav-icon i:hover,
+html.dark-mode .nav-icon i:hover {
+    color: #ff6b6b !important;
+    -webkit-text-fill-color: #ff6b6b;
+}
+
+/* Buttons - Safari Compatible */
+body.dark-mode .dark-mode-btn,
+html.dark-mode .dark-mode-btn {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+body.dark-mode #signup-btn,
+html.dark-mode #signup-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8a8a) !important;
+    -webkit-background: linear-gradient(135deg, #ff6b6b, #ff8a8a);
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* Cart Logo - Safari Compatible */
+body.dark-mode .cart-logo,
+html.dark-mode .cart-logo {
     color: #ffffff !important;
 }
 
-/* Cart Logo */
-body.dark-mode .cart-logo {
-    color: #ffffff;
-}
-
-body.dark-mode .cart-logo i {
+body.dark-mode .cart-logo i,
+html.dark-mode .cart-logo i {
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
 }
 
 body.dark-mode .cart-count {

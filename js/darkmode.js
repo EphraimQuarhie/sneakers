@@ -18,12 +18,26 @@
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     
-    // Apply theme
+    // Apply theme - Safari compatible
     function applyTheme(isDark) {
+        const body = document.body;
+        const html = document.documentElement;
+        
         if (isDark) {
-            document.body.classList.add('dark-mode');
+            body.classList.add('dark-mode');
+            html.classList.add('dark-mode'); // Add to html for Safari
+            body.setAttribute('data-theme', 'dark'); // Fallback for Safari
         } else {
-            document.body.classList.remove('dark-mode');
+            body.classList.remove('dark-mode');
+            html.classList.remove('dark-mode');
+            body.setAttribute('data-theme', 'light');
+        }
+        
+        // Force Safari to repaint
+        if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) {
+            body.style.display = 'none';
+            body.offsetHeight; // Trigger reflow
+            body.style.display = '';
         }
         
         // Update toggle button
@@ -34,7 +48,11 @@
         }
         
         // Save preference
-        localStorage.setItem(STORAGE_KEY, isDark);
+        try {
+            localStorage.setItem(STORAGE_KEY, isDark);
+        } catch (e) {
+            console.warn('localStorage not available:', e);
+        }
     }
     
     // Toggle theme

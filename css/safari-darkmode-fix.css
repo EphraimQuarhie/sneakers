@@ -1,0 +1,49 @@
+/* ========================================
+   SAFARI-SPECIFIC DARK MODE FIXES
+   Ensures dark mode works properly in Safari
+   ======================================== */
+
+/* Force dark mode on html element for Safari */
+html.dark-mode {
+    background-color: #0d0d0d !important;
+    color-scheme: dark;
+}
+
+/* Safari-specific text rendering */
+html.dark-mode * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure backdrop-filter works in Safari */
+@supports (-webkit-backdrop-filter: blur(20px)) {
+    html.dark-mode header,
+    html.dark-mode header.sticky {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* Force color inheritance for Safari */
+html.dark-mode body {
+    color: #e0e0e0 !important;
+    -webkit-text-fill-color: #e0e0e0;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* Fix for Safari's localStorage timing issues */
+@media (prefers-color-scheme: dark) {
+    html.dark-mode {
+        color-scheme: dark;
+    }
+}
+
