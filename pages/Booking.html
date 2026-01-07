@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Sneakers | Element 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/booking.css">
+    <link rel="stylesheet" href="../css/enhanced-ui.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="sticky">
+        <a href="Index.html" class="Logo">
+            <img src="../images/logo.jpg" height="40" width="40" alt="Element 9 Logo">
+            <span>Element 9</span>
+        </a>
+        <ul class="navmenu" id="navmenu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="sneakers.html">Products</a></li>
+            <li><a href="Booking.html" class="active">Booking</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icon">
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, rgba(230,57,70,0.9), rgba(255,107,107,0.9)), url('../images/ds.jpg') center/cover; padding: 10rem 5% 4rem; text-align: center;">
+        <h1 style="color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Reserve Your Sneakers</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; max-width: 600px; margin: 0 auto;">Book your favorite sneakers before they sell out. Secure your pair today!</p>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section" style="padding: 4rem 5%; background: #f8f9fa;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div class="booking-form" style="background: #fff; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <i class='bx bx-calendar-check' style="font-size: 3rem; color: #e63946;"></i>
+                    <h2 style="margin-top: 1rem;">Book Your Sneakers</h2>
+                    <p style="color: #6c757d;">Fill in the details below to reserve your pair</p>
+                </div>
+                
+                <form id="sneakerBookingForm">
+                    <div class="form-group">
+                        <label for="fullName"><i class='bx bx-user'></i> Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class='bx bx-envelope'></i> Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone"><i class='bx bx-phone'></i> Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="sneakerModel"><i class='bx bx-shoe'></i> Sneaker Model</label>
+                            <select id="sneakerModel" name="sneakerModel" required>
+                                <option value="">Select Model</option>
+                                <option value="airMax">Air Max</option>
+                                <option value="airForce">Air Force 1</option>
+                                <option value="jordan">Jordan</option>
+                                <option value="dunks">Nike Dunks</option>
+                                <option value="vans">Vans</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="size"><i class='bx bx-ruler'></i> Size</label>
+                            <select id="size" name="size" required>
+                                <option value="">Select Size</option>
+                                <option value="7">US 7</option>
+                                <option value="8">US 8</option>
+                                <option value="9">US 9</option>
+                                <option value="10">US 10</option>
+                                <option value="11">US 11</option>
+                                <option value="12">US 12</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numSneakers"><i class='bx bx-package'></i> Quantity</label>
+                        <input type="number" id="numSneakers" name="numSneakers" min="1" max="5" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes"><i class='bx bx-note'></i> Special Notes (Optional)</label>
+                        <textarea id="notes" name="notes" placeholder="Any special requests or notes..." style="min-height: 100px;"></textarea>
+                    </div>
+
+                    <button type="submit" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, #e63946, #ff6b6b); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer;">
+                        <i class='bx bx-check-circle'></i> Confirm Booking
+                    </button>
+                </form>
+            </div>
+
+            <!-- Confirmation Message -->
+            <section class="confirmation" id="confirmationMessage" style="display: none; margin-top: 2rem; background: linear-gradient(135deg, #d4edda, #c3e6cb); padding: 2rem; border-radius: 24px; text-align: center;">
+                <i class='bx bx-check-circle' style="font-size: 4rem; color: #28a745;"></i>
+                <h2 style="color: #155724; margin: 1rem 0;">Booking Confirmed!</h2>
+                <p id="confirmationDetails" style="color: #155724;"></p>
+                <a href="sneakers.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #28a745; color: #fff; border-radius: 50px; text-decoration: none;">Continue Shopping</a>
+            </section>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" style="padding: 4rem 5%; background: #fff;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h3 style="margin-bottom: 2rem;">How Booking Works</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div>
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="color: #fff; font-weight: 700; font-size: 1.5rem;">1</span>
+                    </div>
+                    <h4>Fill the Form</h4>
+                    <p style="color: #6c757d;">Enter your details and select your preferred sneakers</p>
+                </div>
+                <div>
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="color: #fff; font-weight: 700; font-size: 1.5rem;">2</span>
+                    </div>
+                    <h4>Get Confirmation</h4>
+                    <p style="color: #6c757d;">Receive instant confirmation via email</p>
+                </div>
+                <div>
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="color: #fff; font-weight: 700; font-size: 1.5rem;">3</span>
+                    </div>
+                    <h4>Pick Up or Deliver</h4>
+                    <p style="color: #6c757d;">Choose pickup or home delivery option</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1d3557; color: #fff; padding: 2rem 5%; text-align: center;">
+        <p style="margin: 0;">© 2024 Element 9. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../js/darkmode.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('sneakerBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const sneakerModel = document.getElementById('sneakerModel').value;
+            const size = document.getElementById('size').value;
+            const numSneakers = document.getElementById('numSneakers').value;
+            
+            const confirmationMessage = `Thank you, ${fullName}!\n\nYour booking details:\n• Model: ${sneakerModel}\n• Size: US ${size}\n• Quantity: ${numSneakers}\n\nConfirmation sent to: ${email}`;
+            
+            document.getElementById('confirmationDetails').textContent = confirmationMessage;
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.querySelector('.booking-form').style.display = 'none';
+            
+            window.scrollTo({ top: document.getElementById('confirmationMessage').offsetTop - 100, behavior: 'smooth' });
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            
+            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
+            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.getElementById('menu-icon').addEventListener('click', () => {
+            document.getElementById('navmenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

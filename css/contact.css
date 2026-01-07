@@ -1,0 +1,221 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* General Header Styles */
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0 !important;
+    padding: 0.75rem 5% !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+/* Logo or Brand Title */
+header.sticky .Logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+header.sticky .Logo img {
+    border-radius: 10px;
+}
+
+header.sticky .Logo span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Navigation Menu */
+header.sticky .navmenu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+header.sticky .navmenu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header.sticky .navmenu a:hover,
+header.sticky .navmenu a.active {
+    color: #e63946;
+}
+
+p {
+    text-align: left;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    header.sticky {
+        flex-direction: row !important;
+        padding: 0.75rem 5% !important;
+    }
+
+    header.sticky .navmenu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    header.sticky .navmenu.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    #menu-icon {
+        display: block !important;
+    }
+}
+
+/* Container Section */
+.container {
+    background: #f8f9fa;
+    padding: 30px 9%;
+    padding-bottom: 100px;
+    border-radius: 10px;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container .heading {
+    text-align: center;
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 55px;
+    text-transform: uppercase;
+}
+
+.container .heading h3 {
+    text-align: center;
+    padding-bottom: 5px;
+    color: #666;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contact Form */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    background-color: #444; /* Darker grey for contact form */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* White glow effect on hover */
+}
+
+label {
+    margin-bottom: 10px;
+    color: #bbb;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555; /* Medium grey for input fields */
+    color: #fff;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+input[type="submit"] {
+    background-color: #0d6efd; /* Light blue for buttons */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #084298;
+    transform: scale(1.05);
+}
+
+/* Social Media Section */
+.social-media {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media a {
+    margin: 0 15px;
+    font-size: 28px;
+    color: #0d6efd;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+.social-media a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .container .heading {
+        font-size: 40px;
+    }
+    input, textarea {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | Element 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/enhanced-ui.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <style>
+        .wishlist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+        .wishlist-item { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .wishlist-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .wishlist-item img { width: 100%; height: 200px; object-fit: cover; }
+        .wishlist-item-info { padding: 1.5rem; }
+        .wishlist-item h4 { margin-bottom: 0.5rem; }
+        .wishlist-item .price { color: #e63946; font-weight: 700; font-size: 1.25rem; }
+        .wishlist-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+        .wishlist-actions button { flex: 1; padding: 0.75rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .btn-cart { background: linear-gradient(135deg, #e63946, #ff6b6b); color: #fff; }
+        .btn-remove { background: #f8f9fa; color: #6c757d; }
+        .btn-remove:hover { background: #e63946; color: #fff; }
+        .empty-wishlist { text-align: center; padding: 4rem 2rem; }
+        .empty-wishlist i { font-size: 5rem; color: #e9ecef; margin-bottom: 1rem; }
+        body.dark-mode .wishlist-item { background: #1a1a1a; border: 1px solid #2d2d2d; }
+        body.dark-mode .btn-remove { background: #2d2d2d; color: #9e9e9e; }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="sticky">
+        <a href="Index.html" class="Logo">
+            <img src="../images/logo.jpg" height="40" width="40" alt="Element 9 Logo">
+            <span>Element 9</span>
+        </a>
+        <ul class="navmenu" id="navmenu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="sneakers.html">Products</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icon">
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section style="background: linear-gradient(135deg, #e63946 0%, #ff6b6b 100%); padding: 10rem 5% 4rem; text-align: center;">
+        <h1 style="color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;"><i class='bx bx-heart'></i> My Wishlist</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem;">Your saved sneakers, ready when you are.</p>
+    </section>
+
+    <!-- Wishlist Content -->
+    <section style="padding: 4rem 5%; background: #f8f9fa; min-height: 50vh;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                <h2 style="margin: 0;">Saved Items (<span id="wishlist-count">0</span>)</h2>
+                <button id="clear-wishlist" style="padding: 0.75rem 1.5rem; background: none; border: 2px solid #e63946; color: #e63946; border-radius: 8px; cursor: pointer; font-weight: 600;">Clear All</button>
+            </div>
+            
+            <div id="wishlist-container" class="wishlist-grid">
+                <!-- Wishlist items will be loaded here -->
+            </div>
+
+            <div id="empty-wishlist" class="empty-wishlist" style="display: none;">
+                <i class='bx bx-heart'></i>
+                <h3>Your wishlist is empty</h3>
+                <p style="color: #6c757d; margin-bottom: 2rem;">Start adding sneakers you love!</p>
+                <a href="sneakers.html" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #e63946, #ff6b6b); color: #fff; border-radius: 50px; text-decoration: none; font-weight: 600;">Browse Sneakers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section style="padding: 4rem 5%; background: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+            <div class="wishlist-grid">
+                <div class="wishlist-item">
+                    <img src="../images/air max.jpg" alt="Air Max">
+                    <div class="wishlist-item-info">
+                        <h4>Air Max</h4>
+                        <p style="color: #6c757d; font-size: 0.9rem;">Men's Shoe</p>
+                        <p class="price">$195.00</p>
+                        <div class="wishlist-actions">
+                            <button class="btn-cart" onclick="addToWishlist('Air Max', 195, '../images/air max.jpg')"><i class='bx bx-heart'></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist-item">
+                    <img src="../images/jordan red.jpg" alt="Nike Jordan Red">
+                    <div class="wishlist-item-info">
+                        <h4>Nike Jordan</h4>
+                        <p style="color: #6c757d; font-size: 0.9rem;">Men's Shoe • Red</p>
+                        <p class="price">$145.00</p>
+                        <div class="wishlist-actions">
+                            <button class="btn-cart" onclick="addToWishlist('Nike Jordan Red', 145, '../images/jordan red.jpg')"><i class='bx bx-heart'></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist-item">
+                    <img src="../images/p.jpg" alt="Nike Dunks Pink">
+                    <div class="wishlist-item-info">
+                        <h4>Nike Dunks</h4>
+                        <p style="color: #6c757d; font-size: 0.9rem;">Women's Shoe • Pink</p>
+                        <p class="price">$130.00</p>
+                        <div class="wishlist-actions">
+                            <button class="btn-cart" onclick="addToWishlist('Nike Dunks Pink', 130, '../images/p.jpg')"><i class='bx bx-heart'></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #1d3557; color: #fff; padding: 2rem 5%; text-align: center;">
+        <p style="margin: 0;">© 2024 Element 9. All Rights Reserved.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
+
+    <script src="../js/darkmode.js"></script>
+    <script>
+        // Wishlist functionality
+        let wishlist = JSON.parse(localStorage.getItem('element9Wishlist')) || [];
+
+        function renderWishlist() {
+            const container = document.getElementById('wishlist-container');
+            const emptyState = document.getElementById('empty-wishlist');
+            const countEl = document.getElementById('wishlist-count');
+            
+            countEl.textContent = wishlist.length;
+            
+            if (wishlist.length === 0) {
+                container.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            container.style.display = 'grid';
+            emptyState.style.display = 'none';
+            
+            container.innerHTML = wishlist.map((item, index) => `
+                <div class="wishlist-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="wishlist-item-info">
+                        <h4>${item.name}</h4>
+                        <p class="price">$${item.price.toFixed(2)}</p>
+                        <div class="wishlist-actions">
+                            <button class="btn-cart" onclick="moveToCart(${index})"><i class='bx bx-cart-add'></i> Add to Cart</button>
+                            <button class="btn-remove" onclick="removeFromWishlist(${index})"><i class='bx bx-trash'></i></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToWishlist(name, price, image) {
+            const exists = wishlist.find(item => item.name === name);
+            if (!exists) {
+                wishlist.push({ name, price, image });
+                localStorage.setItem('element9Wishlist', JSON.stringify(wishlist));
+                renderWishlist();
+                showNotification(`${name} added to wishlist!`);
+            } else {
+                showNotification('Already in wishlist!');
+            }
+        }
+
+        function removeFromWishlist(index) {
+            const item = wishlist[index];
+            wishlist.splice(index, 1);
+            localStorage.setItem('element9Wishlist', JSON.stringify(wishlist));
+            renderWishlist();
+            showNotification(`${item.name} removed from wishlist`);
+        }
+
+        function moveToCart(index) {
+            const item = wishlist[index];
+            let cart = JSON.parse(localStorage.getItem('element9Cart')) || [];
+            cart.push(item);
+            localStorage.setItem('element9Cart', JSON.stringify(cart));
+            removeFromWishlist(index);
+            showNotification(`${item.name} moved to cart!`);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: #28a745; color: #fff; padding: 1rem 2rem; border-radius: 8px; z-index: 9999; animation: slideIn 0.3s ease;';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        document.getElementById('clear-wishlist').addEventListener('click', () => {
+            if (confirm('Clear all items from wishlist?')) {
+                wishlist = [];
+                localStorage.setItem('element9Wishlist', JSON.stringify(wishlist));
+                renderWishlist();
+            }
+        });
+
+        // Initialize
+        renderWishlist();
+
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
+            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
+        });
+        document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('menu-icon').addEventListener('click', () => document.getElementById('navmenu').classList.toggle('active'));
+    </script>
+</body>
+</html>

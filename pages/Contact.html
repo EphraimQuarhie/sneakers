@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Element 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/enhanced-ui.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="sticky">
+        <a href="Index.html" class="Logo">
+            <img src="../images/logo.jpg" height="40" width="40" alt="Element 9 Logo">
+            <span>Element 9</span>
+        </a>
+        <ul class="navmenu" id="navmenu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="sneakers.html">Products</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-icon">
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); padding: 10rem 5% 4rem; text-align: center;">
+        <h1 style="color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Get In Touch</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; max-width: 600px; margin: 0 auto;">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" style="padding: 4rem 5%; background: #f8f9fa;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+            
+            <!-- Contact Info -->
+            <div class="contact-info-wrapper">
+                <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+                
+                <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class='bx bx-map' style="font-size: 1.5rem; color: #fff;"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.25rem;">Our Location</h4>
+                        <p style="color: #6c757d; margin: 0;">9 Element Street, Sneakerville, NY 10001</p>
+                    </div>
+                </div>
+
+                <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class='bx bx-phone' style="font-size: 1.5rem; color: #fff;"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.25rem;">Phone Number</h4>
+                        <p style="color: #6c757d; margin: 0;">+233 (055) 038-4768</p>
+                    </div>
+                </div>
+
+                <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class='bx bx-envelope' style="font-size: 1.5rem; color: #fff;"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.25rem;">Email Address</h4>
+                        <p style="color: #6c757d; margin: 0;">asedaquarshie@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: #fff; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class='bx bx-time' style="font-size: 1.5rem; color: #fff;"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.25rem;">Business Hours</h4>
+                        <p style="color: #6c757d; margin: 0;">Mon - Fri: 9AM - 6PM<br>Sat - Sun: 10AM - 4PM</p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div style="margin-top: 2rem;">
+                    <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                    <div class="social-links" style="display: flex; gap: 1rem;">
+                        <a href="https://www.instagram.com/the_topboy_/" target="_blank" class="social-btn" style="width: 50px; height: 50px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <i class="fa-brands fa-instagram" style="font-size: 1.5rem; color: #E4405F;"></i>
+                        </a>
+                        <a href="https://twitter.com/element9" target="_blank" class="social-btn" style="width: 50px; height: 50px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <i class="fa-brands fa-x-twitter" style="font-size: 1.5rem; color: #000;"></i>
+                        </a>
+                        <a href="https://wa.me/+233550384768" target="_blank" class="social-btn" style="width: 50px; height: 50px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem; color: #25D366;"></i>
+                        </a>
+                        <a href="#" class="social-btn" style="width: 50px; height: 50px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <i class="fa-brands fa-facebook" style="font-size: 1.5rem; color: #1877F2;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper" style="background: #fff; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                <h2 style="margin-bottom: 0.5rem;">Send Us a Message</h2>
+                <p style="color: #6c757d; margin-bottom: 2rem;">Fill out the form below and we'll get back to you shortly.</p>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name"><i class='bx bx-user'></i> Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class='bx bx-envelope'></i> Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject"><i class='bx bx-edit'></i> Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="order">Order Status</option>
+                            <option value="return">Returns & Exchanges</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message"><i class='bx bx-message-detail'></i> Your Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..." required style="min-height: 150px;"></textarea>
+                    </div>
+
+                    <button type="submit" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, #e63946, #ff6b6b); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer;">
+                        <i class='bx bx-send'></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1d3557; color: #fff; padding: 2rem 5%; text-align: center;">
+        <p style="margin: 0;">© 2024 Element 9. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../js/darkmode.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            
+            this.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <i class='bx bx-check-circle' style="font-size: 4rem; color: #28a745;"></i>
+                    <h3 style="margin: 1rem 0;">Message Sent!</h3>
+                    <p style="color: #6c757d;">Thank you, ${name}! We'll get back to you soon.</p>
+                </div>
+            `;
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            
+            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
+            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.getElementById('menu-icon').addEventListener('click', () => {
+            document.getElementById('navmenu').classList.toggle('active');
+        });
+        
+        // Social button hover effects
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

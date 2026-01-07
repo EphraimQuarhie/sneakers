@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Element 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/enhanced-ui.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <style>
+        .faq-item { background: #fff; border-radius: 12px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; transition: background 0.3s; }
+        .faq-question:hover { background: #f8f9fa; }
+        .faq-question i { transition: transform 0.3s; color: #e63946; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 0 1.5rem 1.5rem; }
+        .faq-answer p { color: #6c757d; line-height: 1.7; margin: 0; }
+        body.dark-mode .faq-item { background: #1a1a1a; border: 1px solid #2d2d2d; }
+        body.dark-mode .faq-question { color: #fff; }
+        body.dark-mode .faq-question:hover { background: #2d2d2d; }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="sticky">
+        <a href="Index.html" class="Logo">
+            <img src="../images/logo.jpg" height="40" width="40" alt="Element 9 Logo">
+            <span>Element 9</span>
+        </a>
+        <ul class="navmenu" id="navmenu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="sneakers.html">Products</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icon">
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section style="background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); padding: 10rem 5% 4rem; text-align: center;">
+        <h1 style="color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Frequently Asked Questions</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem;">Find answers to common questions about our products and services.</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 4rem 5%; background: #f8f9fa;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            
+            <h3 style="margin-bottom: 1.5rem; color: #e63946;"><i class='bx bx-package'></i> Orders & Shipping</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does shipping take? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Standard shipping takes 5-7 business days within Ghana. Express shipping (2-3 days) is available for an additional fee. International orders typically take 10-14 business days depending on the destination.</p></div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you offer free shipping? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Yes! We offer free standard shipping on all orders over $100. Orders under $100 have a flat shipping rate of $10 within Ghana.</p></div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I track my order? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Absolutely! Once your order ships, you'll receive an email with a tracking number. You can also track your order by logging into your account or contacting our support team.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you ship internationally? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location. Contact us for specific rates to your country.</p></div>
+            </div>
+
+            <h3 style="margin: 2rem 0 1.5rem; color: #e63946;"><i class='bx bx-refresh'></i> Returns & Exchanges</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is your return policy? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>We offer a 30-day return policy for unworn items in original packaging. Items must be in new condition with all tags attached. Return shipping is free for exchanges; refunds have a $5 restocking fee.</p></div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I exchange for a different size? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Contact our support team or initiate an exchange through your account. We'll send you a prepaid return label and ship your new size as soon as we receive the original pair.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What if my sneakers are defective? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>We stand behind our products. If you receive defective sneakers, contact us within 48 hours with photos. We'll arrange a free replacement or full refund immediately.</p></div>
+            </div>
+
+            <h3 style="margin: 2rem 0 1.5rem; color: #e63946;"><i class='bx bx-check-shield'></i> Authenticity & Quality</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Are all your sneakers authentic? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>100% guaranteed authentic. We source directly from authorized retailers and brand partners. Every pair undergoes our rigorous authentication process. We provide a certificate of authenticity with every purchase.</p></div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do you verify authenticity? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Our expert team checks multiple authentication points including materials, stitching, labels, box quality, and unique identifiers. We use industry-standard verification methods and partner with authentication services.</p></div>
+            </div>
+
+            <h3 style="margin: 2rem 0 1.5rem; color: #e63946;"><i class='bx bx-credit-card'></i> Payment & Security</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>We accept all major credit cards (Visa, Mastercard, American Express), Mobile Money (MTN, Vodafone, AirtelTigo), PayPal, and bank transfers. All payments are processed securely.</p></div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is my payment information secure? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Absolutely. We use SSL encryption and never store your full payment details. All transactions are processed through secure, PCI-compliant payment gateways.</p></div>
+            </div>
+
+            <h3 style="margin: 2rem 0 1.5rem; color: #e63946;"><i class='bx bx-ruler'></i> Sizing & Fit</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I find my correct size? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Check our size guide on each product page. We recommend measuring your foot length and comparing to our size chart. If you're between sizes, we generally recommend sizing up for a more comfortable fit.</p></div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do different brands fit differently? <i class='bx bx-chevron-down'></i></div>
+                <div class="faq-answer"><p>Yes, sizing can vary between brands. Nike tends to run true to size, Jordans often run slightly large, and Vans typically run true to size. Check individual product descriptions for specific fit notes.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section style="padding: 4rem 5%; background: #fff; text-align: center;">
+        <h2 style="margin-bottom: 1rem;">Still Have Questions?</h2>
+        <p style="color: #6c757d; margin-bottom: 2rem;">Our support team is here to help you.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="Contact.html" style="padding: 1rem 2rem; background: linear-gradient(135deg, #e63946, #ff6b6b); color: #fff; border-radius: 50px; text-decoration: none; font-weight: 600;">Contact Us</a>
+            <a href="https://wa.me/+233550384768" style="padding: 1rem 2rem; background: #25D366; color: #fff; border-radius: 50px; text-decoration: none; font-weight: 600;"><i class='bx bxl-whatsapp'></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <footer style="background: #1d3557; color: #fff; padding: 2rem 5%; text-align: center;">
+        <p style="margin: 0;">© 2024 Element 9. All Rights Reserved.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
+
+    <script src="../js/darkmode.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
+            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
+        });
+        document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('menu-icon').addEventListener('click', () => document.getElementById('navmenu').classList.toggle('active'));
+    </script>
+</body>
+</html>

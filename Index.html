@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element 9 | Premium Sneakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-ui.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="sticky">
+        <a href="Index.html" class="Logo">
+            <img src="images/logo.jpg" height="40" width="40" alt="Element 9 Logo">
+            <span>Element 9</span>
+        </a>
+        
+        <ul class="navmenu" id="navmenu">
+            <li><a href="Index.html" class="active">Home</a></li>
+            <li><a href="pages/sneakers.html">Products</a></li>
+            <li><a href="pages/Booking.html">Booking</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/Contact.html">Contact</a></li>
+        </ul> 
+
+        <div class="nav-icon">
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <a href="javascript:void(0)" id="signup-btn" class="btn-signup">Sign Up</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Signup Popup -->
+    <div id="signup-popup" class="signup-popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-popup">&times;</span>
+            <h2>Create Account</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Join Element 9 for exclusive deals</p>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="main-home">
+        <div class="main-text">
+            <h5>✨ Limited Edition</h5>
+            <h1>New Element<br>Collection 2024</h1>
+            <p>Unleash the extraordinary. Elevate your game with Element 9's Limited Edition. Where innovation meets style, leaving a lasting mark.</p>
+            <a href="pages/sneakers.html" class="main-btn btn-primary">
+                Shop Now <i class='bx bx-right-arrow-alt'></i>
+            </a>
+        </div>
+        <div class="down-arrow">
+            <a href="#trending" class="down"><i class='bx bx-down-arrow-alt'></i></a>
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending-product" id="trending">
+        <div class="center-text">
+            <h2>Our Trending <span>Products</span></h2>
+            <p>Discover the most popular sneakers loved by our customers</p>
+        </div>
+        <div class="products">
+            <div class="row">
+                <img src="images/Nike Dunks.jpg" alt="Nike Dunks Blue">
+                <div class="product-text"><h5>🔥 Hot</h5></div>
+                <div class="heart-icon"><i class='bx bx-heart'></i></div>
+                <div class="price">
+                    <div class="rating">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    </div>
+                    <h4>Nike Dunks Blue</h4>
+                    <p>$99 - $129</p>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/panda blackNW.jpg" alt="Black & White Running Set">
+                <div class="product-text"><h5>Sale</h5></div>
+                <div class="heart-icon"><i class='bx bx-heart'></i></div>
+                <div class="price">
+                    <div class="rating">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    </div>
+                    <h4>Nike Dunks Panda</h4>
+                    <p>$99 - $129</p>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/Nike orange.jpg" alt="Orange Running Set">
+                <div class="product-text"><h5>New</h5></div>
+                <div class="heart-icon"><i class='bx bx-heart'></i></div>
+                <div class="price">
+                    <div class="rating">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    </div>
+                    <h4>Half Running Set</h4>
+                    <p>$99 - $129</p>
+                </div>
+            </div> 
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="pages/sneakers.html" class="btn-secondary" style="display: inline-block; padding: 1rem 2rem; border: 2px solid #e63946; color: #e63946; border-radius: 50px; font-weight: 600;">
+                View All Products <i class='bx bx-right-arrow-alt'></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" style="padding: 4rem 5%; background: #f8f9fa;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
+                <div class="feature-item">
+                    <i class='bx bx-package' style="font-size: 3rem; color: #e63946; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Free Shipping</h4>
+                    <p style="color: #6c757d;">On orders over $100</p>
+                </div>
+                <div class="feature-item">
+                    <i class='bx bx-refresh' style="font-size: 3rem; color: #e63946; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Easy Returns</h4>
+                    <p style="color: #6c757d;">30-day return policy</p>
+                </div>
+                <div class="feature-item">
+                    <i class='bx bx-shield-check' style="font-size: 3rem; color: #e63946; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Secure Payment</h4>
+                    <p style="color: #6c757d;">100% secure checkout</p>
+                </div>
+                <div class="feature-item">
+                    <i class='bx bx-support' style="font-size: 3rem; color: #e63946; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">24/7 Support</h4>
+                    <p style="color: #6c757d;">Dedicated support team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section style="padding: 3rem 5%; background: #fff; text-align: center;">
+        <p style="color: #6c757d; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Trusted Brands We Carry</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; opacity: 0.6;">
+            <span style="font-size: 2rem; font-weight: 700; color: #333;">NIKE</span>
+            <span style="font-size: 2rem; font-weight: 700; color: #333;">JORDAN</span>
+            <span style="font-size: 2rem; font-weight: 700; color: #333;">VANS</span>
+            <span style="font-size: 2rem; font-weight: 700; color: #333;">CONVERSE</span>
+            <span style="font-size: 2rem; font-weight: 700; color: #333;">ADIDAS</span>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section style="padding: 4rem 5%; background: #f8f9fa;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;">What Our Customers Say</h2>
+            <p style="text-align: center; color: #6c757d; margin-bottom: 3rem;">Real reviews from real sneakerheads</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="display: flex; gap: 0.25rem; color: #ffc107; margin-bottom: 1rem;">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p style="color: #333; line-height: 1.7; margin-bottom: 1.5rem;">"Best sneaker store in Ghana! Got my Jordan 4s and they're 100% authentic. Fast delivery and great customer service."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e63946, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600;">KA</div>
+                        <div>
+                            <p style="font-weight: 600; margin: 0;">Kofi Asante</p>
+                            <p style="color: #6c757d; font-size: 0.85rem; margin: 0;">Accra, Ghana</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="display: flex; gap: 0.25rem; color: #ffc107; margin-bottom: 1rem;">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p style="color: #333; line-height: 1.7; margin-bottom: 1.5rem;">"The booking system is so convenient! Reserved my Nike Dunks and picked them up the next day. Will definitely shop here again."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #457b9d, #1d3557); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600;">AA</div>
+                        <div>
+                            <p style="font-weight: 600; margin: 0;">Ama Adjei</p>
+                            <p style="color: #6c757d; font-size: 0.85rem; margin: 0;">Kumasi, Ghana</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="display: flex; gap: 0.25rem; color: #ffc107; margin-bottom: 1rem;">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    </div>
+                    <p style="color: #333; line-height: 1.7; margin-bottom: 1.5rem;">"Great selection and prices. The size guide helped me find the perfect fit. My Air Max are super comfortable!"</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #2a9d8f, #264653); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600;">YM</div>
+                        <div>
+                            <p style="font-weight: 600; margin: 0;">Yaw Mensah</p>
+                            <p style="color: #6c757d; font-size: 0.85rem; margin: 0;">Takoradi, Ghana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="padding: 4rem 5%; background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); text-align: center;">
+        <h2 style="color: #fff; margin-bottom: 1rem;">Stay Updated</h2>
+        <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Subscribe to our newsletter for exclusive deals and new arrivals.</p>
+        <form style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 500px; margin: 0 auto;">
+            <input type="email" placeholder="Enter your email" style="flex: 1; min-width: 250px; padding: 1rem; border: none; border-radius: 50px; font-size: 1rem;">
+            <button type="submit" style="padding: 1rem 2rem; background: #e63946; color: #fff; border: none; border-radius: 50px; font-weight: 600; cursor: pointer;">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1d3557; color: #fff; padding: 4rem 5% 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <!-- Brand -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <img src="images/logo.jpg" height="40" width="40" alt="Element 9 Logo" style="border-radius: 8px;">
+                        <span style="font-size: 1.25rem; font-weight: 700;">Element 9</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7;">Your trusted destination for authentic, premium sneakers. Quality footwear for every style.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://www.instagram.com/the_topboy_/" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://twitter.com/element9" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://wa.me/+233550384768" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;"><i class='bx bxl-whatsapp'></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;"><i class='bx bxl-facebook'></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/sneakers.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Shop All</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/Booking.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Book Sneakers</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/wishlist.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">My Wishlist</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/size-guide.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Help -->
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1rem;">Help & Info</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/faq.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">FAQ</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/shipping.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Shipping & Returns</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/about.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="pages/Contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1rem;">Contact Us</h4>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><i class='bx bx-map'></i> 9 Element Street, Accra</li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><i class='bx bx-phone'></i> +233 (055) 038-4768</li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><i class='bx bx-envelope'></i> info@element9.com</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;"><i class='bx bx-time'></i> Mon-Sat: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Payment Methods -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="margin: 0; color: rgba(255,255,255,0.5); font-size: 0.85rem;">© 2024 Element 9. All Rights Reserved.</p>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">We Accept:</span>
+                    <i class='bx bxl-visa' style="font-size: 2rem; color: rgba(255,255,255,0.7);"></i>
+                    <i class='bx bxl-mastercard' style="font-size: 2rem; color: rgba(255,255,255,0.7);"></i>
+                    <i class='bx bxl-paypal' style="font-size: 2rem; color: rgba(255,255,255,0.7);"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/darkmode.js"></script>
+    <script>
+        // Signup popup
+        const signupBtn = document.getElementById('signup-btn');
+        const closePopup = document.getElementById('close-popup');
+        const signupPopup = document.getElementById('signup-popup');
+        
+        if (signupBtn) {
+            signupBtn.addEventListener('click', () => {
+                signupPopup.style.display = 'block';
+            });
+        }
+        
+        if (closePopup) {
+            closePopup.addEventListener('click', () => {
+                signupPopup.style.display = 'none';
+            });
+        }
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === signupPopup) {
+                signupPopup.style.display = 'none';
+            }
+        });
+        
+        // Heart icon toggle
+        document.querySelectorAll('.heart-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const heart = this.querySelector('i');
+                heart.classList.toggle('bx-heart');
+                heart.classList.toggle('bxs-heart');
+            });
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            
+            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
+            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.getElementById('menu-icon').addEventListener('click', () => {
+            document.getElementById('navmenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

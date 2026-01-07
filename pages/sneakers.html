@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Sneakers | Element 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/sneakers.css">
+    <link rel="stylesheet" href="../css/enhanced-ui.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="sticky">
+        <a href="Index.html" class="Logo">
+            <img src="../images/logo.jpg" height="40" width="40" alt="Element 9 Logo">
+            <span>Element 9</span>
+        </a>
+        <ul class="navmenu" id="navmenu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="sneakers.html" class="active">Products</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icon">
+            <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">🌙</button>
+            <a href="wishlist.html" style="color: inherit; margin-right: 10px;" title="My Wishlist">
+                <i class='bx bx-heart' style="font-size: 1.5rem;"></i>
+            </a>
+            <div class="cart-logo" id="cart-logo">
+                <i class='bx bx-cart'></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="sneakers-banner" style="background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); padding: 8rem 5% 4rem; text-align: center;">
+        <h1 style="color: #fff; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem;">Sneakers Collection 2024</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; max-width: 600px; margin: 0 auto;">Discover the latest sneakers that combine comfort, style, and performance.</p>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" style="background: #fff; padding: 1rem 5%; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <span style="font-weight: 600;">Filter:</span>
+        <select id="brand-filter" style="padding: 0.5rem 1rem; border: 2px solid #e9ecef; border-radius: 8px; cursor: pointer;">
+            <option>All Brands</option>
+            <option>Nike</option>
+            <option>Jordan</option>
+            <option>Vans</option>
+            <option>Converse</option>
+        </select>
+        <select style="padding: 0.5rem 1rem; border: 2px solid #e9ecef; border-radius: 8px; cursor: pointer;">
+            <option>All Sizes</option>
+            <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+        </select>
+        <select style="padding: 0.5rem 1rem; border: 2px solid #e9ecef; border-radius: 8px; cursor: pointer;">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+        </select>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="content-right" style="padding: 2rem 5%;">
+        <div class="product" data-brand="Nike">
+            <img src="../images/Niike Air force.jpg" alt="Nike Air Force White">
+            <div class="product-text"><h5>Sale</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Nike Air Force</h4>
+                <p class="category">Men's Shoe</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$80.99</p>
+            </div>
+            <button class="add-to-cart" data-name="Nike Air Force" data-price="80.99" data-image="../images/Niike Air force.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Nike">
+            <img src="../images/Nike Air force Black&White.jpg" alt="Nike Air Force Black & White">
+            <div class="product-text"><h5>🔥 Hot</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <h4>Nike Air Force</h4>
+                <p class="category">Men's Shoe • Black & White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$150.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Nike Air Force Black & White" data-price="150" data-image="../images/Nike Air force Black&White.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Nike">
+            <img src="../images/Nike orange.jpg" alt="Nike Dunks Orange">
+            <div class="product-text"><h5>New</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Nike Dunks</h4>
+                <p class="category">Men's Shoe • Orange</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$200.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Nike Dunks Orange" data-price="200" data-image="../images/Nike orange.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/Jordan 1 Retro High.jpg" alt="Jordan 1 Retro High">
+            <div class="product-text"><h5>Sale</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <h4>Jordan 1 Retro High</h4>
+                <p class="category">Men's Shoe • Red & Black</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$145.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan 1 Retro High" data-price="145" data-image="../images/Jordan 1 Retro High.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/Jordan 4 Retro.jpg" alt="Jordan 4 Retro">
+            <div class="product-text"><h5>Sale</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i></div>
+                <h4>Jordan 4 Retro</h4>
+                <p class="category">Men's Shoe • Grey & White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$90.10</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan 4 Retro" data-price="90.10" data-image="../images/Jordan 4 Retro.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Vans">
+            <img src="../images/Vans Old Skool.jpg" alt="Vans Old Skool">
+            <div class="product-text"><h5>Classic</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Vans Old Skool</h4>
+                <p class="category">Unisex • Black & White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$99.99</p>
+            </div>
+            <button class="add-to-cart" data-name="Vans Old Skool" data-price="99.99" data-image="../images/Vans Old Skool.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Nike">
+            <img src="../images/Nike purple.jpg" alt="Nike Dunks Purple">
+            <div class="product-text"><h5>Women's</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <h4>Nike Dunks</h4>
+                <p class="category">Women's Shoe • Purple</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$130.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Nike Dunks Purple" data-price="130" data-image="../images/Nike purple.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Nike">
+            <img src="../images/Nike Air max.jpg" alt="Nike Air Max">
+            <div class="product-text"><h5>🔥 Hot</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <h4>Nike Air Max</h4>
+                <p class="category">Men's Shoe • White & Blue</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$195.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Nike Air Max" data-price="195" data-image="../images/Nike Air max.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <!-- Converse Products -->
+        <div class="product horizontal-card" data-brand="Converse">
+            <img src="../images/Converse Chuck 70.jpg" alt="Converse Chuck 70">
+            <div class="product-text"><h5>Classic</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div class="product-info-wrapper" style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Converse Chuck 70</h4>
+                <p class="category">Unisex • Black & White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$85.00</p>
+                <p class="description" style="display: none; margin-top: 10px; color: #666;">The Converse Chuck 70 features a canvas upper, rubber toe cap, and a durable rubber outsole for classic style and comfort.</p>
+                <button class="add-to-cart" data-name="Converse Chuck 70" data-price="85" data-image="../images/Converse Chuck 70.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product" data-brand="Converse">
+            <img src="../images/Converse Chuck Taylor All Star.jpg" alt="Converse Chuck Taylor All Star">
+            <div class="product-text"><h5>Popular</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Converse Chuck Taylor All Star</h4>
+                <p class="category">Unisex • White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$75.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Converse Chuck Taylor All Star" data-price="75" data-image="../images/Converse Chuck Taylor All Star.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Converse">
+            <img src="../images/Converse One Star.jpg" alt="Converse One Star">
+            <div class="product-text"><h5>New</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Converse One Star</h4>
+                <p class="category">Unisex • Black</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$80.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Converse One Star" data-price="80" data-image="../images/Converse One Star.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+        
+        <!-- Nike Products (Additional) -->
+        <div class="product" data-brand="Nike">
+            <img src="../images/Nike Dunks.jpg" alt="Nike Dunks">
+            <div class="product-text"><h5>Popular</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Nike Dunks</h4>
+                <p class="category">Unisex • Black & White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$130.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Nike Dunks" data-price="130" data-image="../images/Nike Dunks.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <!-- Jordan Products (Additional) -->
+        <div class="product" data-brand="Jordan">
+            <img src="../images/Jordan 4 blue.jpg" alt="Jordan 4 Blue">
+            <div class="product-text"><h5>New</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Jordan 4 Blue</h4>
+                <p class="category">Men's Shoe • Blue</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$160.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan 4 Blue" data-price="160" data-image="../images/Jordan 4 blue.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/Jordan 4 white.jpg" alt="Jordan 4 White">
+            <div class="product-text"><h5>New</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Jordan 4 White</h4>
+                <p class="category">Men's Shoe • White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$165.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan 4 White" data-price="165" data-image="../images/Jordan 4 white.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/jordan 4 grey.jpg" alt="Jordan 4 Grey">
+            <div class="product-text"><h5>Classic</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Jordan 4 Grey</h4>
+                <p class="category">Men's Shoe • Grey</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$155.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan 4 Grey" data-price="155" data-image="../images/jordan 4 grey.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/jordan red.jpg" alt="Jordan Red">
+            <div class="product-text"><h5>🔥 Hot</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <h4>Jordan Red</h4>
+                <p class="category">Men's Shoe • Red</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$170.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan Red" data-price="170" data-image="../images/jordan red.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/Jordan orange.jpg" alt="Jordan Orange">
+            <div class="product-text"><h5>New</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Jordan Orange</h4>
+                <p class="category">Men's Shoe • Orange</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$150.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan Orange" data-price="150" data-image="../images/Jordan orange.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Jordan">
+            <img src="../images/Jordan pink.jpg" alt="Jordan Pink">
+            <div class="product-text"><h5>Women's</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <h4>Jordan Pink</h4>
+                <p class="category">Women's Shoe • Pink</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$149.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Jordan Pink" data-price="149" data-image="../images/Jordan pink.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <!-- Vans Products (Additional) -->
+        <div class="product" data-brand="Vans">
+            <img src="../images/Vans All stars.jpg" alt="Vans All Stars">
+            <div class="product-text"><h5>Classic</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Vans All Stars</h4>
+                <p class="category">Unisex • Black</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$70.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Vans All Stars" data-price="70" data-image="../images/Vans All stars.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Vans">
+            <img src="../images/Vans Authentic.jpg" alt="Vans Authentic">
+            <div class="product-text"><h5>Popular</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Vans Authentic</h4>
+                <p class="category">Unisex • Black</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$75.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Vans Authentic" data-price="75" data-image="../images/Vans Authentic.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Vans">
+            <img src="../images/vans blue.jpg" alt="Vans Blue">
+            <div class="product-text"><h5>New</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Vans Blue</h4>
+                <p class="category">Unisex • Blue</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$78.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Vans Blue" data-price="78" data-image="../images/vans blue.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+
+        <div class="product" data-brand="Vans">
+            <img src="../images/vans.jpg" alt="Vans Classic">
+            <div class="product-text"><h5>Classic</h5></div>
+            <div class="heart-icon"><i class='bx bx-heart'></i></div>
+            <div style="padding: 1rem;">
+                <div class="rating"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></div>
+                <h4>Vans Classic</h4>
+                <p class="category">Unisex • Black & White</p>
+                <p class="price" style="color: #e63946; font-weight: 700; font-size: 1.25rem;">$72.00</p>
+            </div>
+            <button class="add-to-cart" data-name="Vans Classic" data-price="72" data-image="../images/vans.jpg"><i class='bx bx-cart-add'></i> Add to Cart</button>
+        </div>
+    </div>
+
+
+    <!-- Cart Container -->
+    <div class="cart-container" id="cart" style="display: none;">
+        <h3><i class='bx bx-cart'></i> Your Cart</h3>
+        <div id="cart-items"></div>
+        <div style="padding: 1rem; border-top: 1px solid #eee;">
+            <p style="display: flex; justify-content: space-between; font-size: 1.125rem; font-weight: 600;">
+                <span>Total:</span>
+                <span>$<span id="cart-total">0.00</span></span>
+            </p>
+            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                <button onclick="clearCart()" style="flex: 1; background: #6c757d;">Clear</button>
+                <button onclick="checkout()" style="flex: 2; background: linear-gradient(135deg, #e63946, #ff6b6b);">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #1d3557; color: #fff; padding: 4rem 5% 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <img src="../images/logo.jpg" height="40" width="40" alt="Element 9 Logo" style="border-radius: 8px;">
+                        <span style="font-size: 1.25rem; font-weight: 700;">Element 9</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7;">Your trusted destination for authentic, premium sneakers.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="sneakers.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Shop All</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="wishlist.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">My Wishlist</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="size-guide.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1rem;">Help</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="faq.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">FAQ</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="shipping.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Shipping & Returns</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="Contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-size: 1rem;">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem;"><i class='bx bx-phone'></i> +233 (055) 038-4768</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;"><i class='bx bx-envelope'></i> info@element9.com</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
+                <p style="margin: 0; color: rgba(255,255,255,0.5); font-size: 0.85rem;">© 2024 Element 9. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        // Add to cart event listeners
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', function() {
+                addToCart(this.dataset.name, this.dataset.price, this.dataset.image);
+            });
+        });
+        
+        // Cart toggle
+        document.getElementById('cart-logo').addEventListener('click', () => {
+            const cart = document.getElementById('cart');
+            cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // Heart icon toggle
+        document.querySelectorAll('.heart-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const heart = this.querySelector('i');
+                heart.classList.toggle('bx-heart');
+                heart.classList.toggle('bxs-heart');
+            });
+        });
+        
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (scrollTop / scrollHeight) * 100 + '%';
+            
+            document.getElementById('backToTop').classList.toggle('visible', scrollTop > 300);
+            document.querySelector('header').classList.toggle('scrolled', scrollTop > 50);
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.getElementById('menu-icon').addEventListener('click', () => {
+            document.getElementById('navmenu').classList.toggle('active');
+        });
+
+        // Brand filter logic
+        const brandFilter = document.getElementById('brand-filter');
+        if (brandFilter) {
+            brandFilter.addEventListener('change', () => {
+                const selected = brandFilter.value;
+                document.querySelectorAll('.content-right .product').forEach(card => {
+                    const brand = card.dataset.brand || '';
+                    if (selected === 'All Brands') {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = (brand === selected) ? '' : 'none';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
